@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {   
+    int a;
+    int b;
+    int c;
+    printf("Enter length of side A: ");
+    scanf("%d", &a);
+    printf("Enter length of side B: ");
+    scanf("%d", &b);
+    printf("Enter length of side C: ");
+    scanf("%d", &c);
+    
+    if(a+b>c && b+c>a && a+c>b)
+        printf("This is a triangle");
+    else
+        printf("This isn't a triangle");
+}
