@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    double Vsupply = 36;
+    double R1 = 3;
+    double R2 = 8;
+    double R3 = 4;
+    double RF = 12;
+    double Req = R1 + 1/(1/(R2+R3)+1/RF);
+    double Imain = Vsupply/Req;
+    double I1 = Imain;
+    double V1 = I1*R1;
+    double V23F = Vsupply - V1;
+    double IF = V23F / RF;
+    double I23 = V23F / (R2 + R3);
+    double V2 = I23 * R2;
+    double V3 = I23 * R3;
+    double VF = IF * RF;
+    printf("Req: %.2f Imain: %.2f Vsupply %.2f \n", Req, Imain, Vsupply);
+    printf("R1: %.2f I1: %.2f V1: %.2f \n", R1, I1, V1);
+    printf("R2: %.2f I2: %.2f V2: %.2f \n", R2, I23, V2);
+    printf("R3: %.2f I3: %.2f V3: %.2f \n", R3, I23, V3);
+    printf("RF: %.2f IF: %.2f VF: %.2f \n", RF, IF, VF);
+}
